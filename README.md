@@ -9,7 +9,7 @@ AI model able to recognize and arrange diferent kinds of fractures.
 
 ## Autores
 
-- [Felipe Vargas Garcia - 2230033](https://github.com/popcorner893)
+- [Felipe Vargas Garcia - 2230033](https://github.com/Pipevg1801)
 - Juan Felipe Serrano Contreras - 2230088
 - Javier Gomez Villaruel - 2230956
 
