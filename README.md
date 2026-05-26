@@ -42,10 +42,18 @@ Para preparar las imágenes para los modelos, se realizaron las siguientes opera
 * Redimensionamiento de todas las imágenes a un tamaño estandarizado de **256x256 píxeles**.
 
 ## Modelos utilizados
-El proyecto exploró métodos de aprendizaje automático para clasificación:
-* **K-Means ($k=4$)**: Utilizado para intentar agrupar los datos, aunque se concluyó que los grupos formados no coincidían con las categorías médicas.
-* **DBSCAN**: Algoritmo de clustering basado en densidad, que resultó insuficiente dado que los datos no presentan variaciones de densidad significativas tras la proyección en 2D.
-* **Nota**: Se determinó que los métodos tradicionales basados en píxeles crudos no son suficientes, sugiriendo la necesidad de implementar **Deep Learning** para una mejor extracción de características.
+El proyecto exploró **diversos métodos de aprendizaje automático para la clasificación y agrupamiento de imágenes de fracturas óseas**. Los modelos de clasificación supervisada evaluados fueron:
+*   **Árbol de Decisión (Decision Tree)**: Un modelo de clasificación basado en un árbol, utilizado para predecir la clase de fractura.
+*   **Bosque Aleatorio (Random Forest)**: Un método de conjunto que combina múltiples árboles de decisión para mejorar la precisión y reducir el sobreajuste.
+*   **Máquinas de Vectores de Soporte (SVM - Support Vector Machine)**: Un clasificador que busca el hiperplano óptimo para separar las clases en el espacio de características.
+*   **Perceptrón Multicapa (MLP - Multi-layer Perceptron) con TensorFlow**: Una red neuronal simple para clasificación, que se probó tanto con 10 clases como con 2 clases seleccionadas.
+Para la reducción de dimensionalidad y visualización, se empleó:
+*   **Análisis de Componentes Principales (PCA)**: Utilizado para transformar las características de la imagen a un espacio de menor dimensión, facilitando la visualización de la distribución de clases y el agrupamiento.
+En cuanto a los métodos de clustering no supervisado, se probaron:
+*   **K-Means (k=2)**: Se utilizó con el objetivo de agrupar los datos en clusters, aunque se concluyó que los grupos formados no coincidían con las categorías médicas reales, mostrando que la división geométrica no tiene significado clínico.
+*   **DBSCAN**: Un algoritmo de clustering basado en densidad, que resultó insuficiente dado que los datos no presentan variaciones de densidad significativas tras la proyección en 2D con PCA, categorizando la mayoría de los puntos como ruido.
+
+**Nota**: Se determinó que los métodos tradicionales basados en píxeles crudos y características de baja dimensionalidad no son suficientes para esta tarea compleja de clasificación de fracturas, sugiriendo la necesidad de implementar **Deep Learning** (específicamente Redes Neuronales Convolucionales) para una mejor extracción de características y un rendimiento más robusto.
 
 ## Conclusiones
 * Los métodos de clustering tradicionales como K-Means y DBSCAN no son óptimos para este conjunto de datos, ya que no logran capturar las características semánticas necesarias para diferenciar tipos de fracturas médicas.
