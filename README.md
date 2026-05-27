@@ -66,3 +66,4 @@ En cuanto a los métodos de clustering no supervisado, se probaron:
 ## Enlaces
 * [Dataset original en Kaggle](https://www.kaggle.com/datasets/pkdarabi/bone-break-classification-image-dataset)
 * [Repositorio del proyecto](https://github.com/Pipevg1801/FractureFinder-Automated-Classification-of-Bone-Breaks-in-X-rays.git)
+* [Link del video de Youtube](https://youtu.be/2RMARL7dRNc)
